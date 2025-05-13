@@ -36,5 +36,6 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
         git add Preprocessing/car_preprocessing/*.csv
+        git add Preprocessing/car_preprocessing/*.pkl
         git commit -m "Add processed dataset from preprocessing pipeline"
         git push https://x-access-token:${GH_TOKEN}@github.com/GinantiRiski1/Eksperimen_SML_GinantiRiski.git HEAD:Main
