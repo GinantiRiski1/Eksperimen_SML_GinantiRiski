@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 import joblib
 import os
 
-def preprocess_pipeline(input_path='dataset_raw/car_data.csv', output_dir='preprocessing/car_preprocessing'):
+def preprocess_pipeline(input_path='dataset_raw/car_data.csv', output_dir='Preprocessing/car_preprocessing'):
     # Buat folder output jika belum ada
     os.makedirs(output_dir, exist_ok=True)
 
