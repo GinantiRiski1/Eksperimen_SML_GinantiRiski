@@ -29,10 +29,14 @@ jobs:
         mkdir -p Preprocessing/car_preprocessing
         python Preprocessing/automate_Ginanti_Riski.py
 
+    
     - name: Commit and push processed files
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
-        git add Preprocessing/car_preprocessing/*.csv
+        git add Preprocessing/car_preprocessing/*.csv || true
         git commit -m "Add processed dataset from preprocessing pipeline" || echo "No changes to commit"
         git push origin HEAD:Main
+
+
+        
