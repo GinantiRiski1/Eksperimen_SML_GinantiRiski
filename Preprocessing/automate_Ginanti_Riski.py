@@ -18,7 +18,7 @@ def preprocess_pipeline(input_path='dataset_raw/car_data.csv', output_dir='Prepr
     le = LabelEncoder()
     if df['Gender'].dtype == 'object':
         df['Gender'] = le.fit_transform(df['Gender'])
-        joblib.dump(le, os.path.join(output_dir, 'label_encoder_gender.pkl'))
+        joblib.dump(le, os.path.join(output_dir, 'Preprocessing/label_encoder_gender.pkl'))
 
     # 2. Hapus kolom User ID
     if 'User ID' in df.columns:
@@ -29,7 +29,7 @@ def preprocess_pipeline(input_path='dataset_raw/car_data.csv', output_dir='Prepr
     X = df.drop(columns='Purchased')
     y = df['Purchased']
     X_scaled = scaler.fit_transform(X)
-    joblib.dump(scaler, os.path.join(output_dir, 'scaler.pkl'))
+    joblib.dump(scaler, os.path.join(output_dir, 'Preprocessing/scaler.pkl'))
 
     # 4. Oversampling dengan SMOTE
     smote = SMOTE(random_state=42)
